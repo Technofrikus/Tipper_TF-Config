@@ -97,6 +97,11 @@
             key-positions = <7 8>;
             bindings = <&kp BACKSPACE>;
             };
+	     combo_backspace {
+	            timeout-ms = <50>;
+	            key-positions = <17 18>;
+	            bindings = <&kp BACKSPACE>;
+	            };
         combo_esc {
             timeout-ms = <50>;
             key-positions = <0 1>;
@@ -120,7 +125,7 @@
             key-positions = <22 27>;
             bindings = <&caps_word>;
             };
-
+			
     };
 
     behaviors {
@@ -156,15 +161,15 @@
             label = "Base";
 // -------------------------------     -------------------------------
 // |  Q  |  W  |  E  |  R  |  T  |  -  |  Y  |  U  |  I  |  O  |  P  | 
-// |A sft|S win|D alt|F ctl|  G  |     |  H  |J ctl|K alt|L win|' sft| 
-// |  Z  |  X  |  C  |  V  |  B  |  -  |  N  |  M  |  ,  |  .  |  ;  | 
-// ------|    Spc    |    Nav    |     |    Sym    |    Ent    |------
+// |A sft|S ctl|D alt|F cmd|  G  |     |  H  |J cmd|K alt|L ctl|. sft| 
+// |Z sft|  X  |  C  |  V  |  B  |  -  |  N  |  M  |  ,  |  .  |; sft| 
+// ------|    Nav    |  Bksp Symb|     | NUM Space | LGUI Ent  |------
 //       -------------------------     -------------------------
             bindings = <
                 &kp Q       &kp W       &kp E       &kp R       &kp T                   &kp Y       &kp U       &kp I       &kp O       &kp P
-                &hm LSHFT A &hm LGUI S  &hm LALT D  &hm LCTRL F &kp G                   &kp H       &hm RCTRL J &hm RALT K  &hm RGUI L  &hm RSHFT QUOT
-                &kp Z       &kp X       &kp C       &kp V       &kp B                   &kp N       &kp M       &kp COMMA   &kp DOT     &kp SEMI
-                                          &lt NUM_L SPACE  &mo NAV_L                  &mo SYM_L   &kp RET 
+                &hm LSHFT A &hm LCTRL S  &hm LALT D  &hm LGUI F &kp G                   &kp H       &hm RGUI J &hm RALT K  &hm RCTRL L  &lt NAV_Lj DOT
+                &hm LSHFT Z       &kp X       &kp C       &kp V       &kp B             &kp N       &kp M       &kp COMMA   &kp DOT     &hm RSHIFT SEMI
+                                          &mo NAV_L      &lt SYM_L BSPC                        &lt NUM_L SPACE   &lt LGUI RET 
             >;
         };
     
@@ -187,19 +192,21 @@
         sym_layer {
             label = "Symbol";
 // -------------------------------     -------------------------------
-// |  `  |  ^  |  @  |  $  |  ~  |  -  |     |     |     |     |     | 
-// |  &  |  !  |  +  |  _  |  #  |     |pg up|     |     |     |     | 
+// |  `  |  ^  |  @  |  $  |  ~  |  -  |     |  ü  |     |  ö  |     | 
+// |  ä  |  ß  |  +  |  !  |  #  |     |pg up|  ?  |  (  |  )  |     | 
 // |  |  |  ?  |  -  |  %  |     |  -  |pg dn|     |     |     |     | 
 // ------|           |    CFG    |     |           |           |------
 //       -------------------------     -------------------------
             bindings = <
-                &kp GRAVE   &kp CARET   &kp AT      &kp DOLLAR  &kp TILDE               &none       &none       &none       &none       &none
-                &kp AMPS    &kp EXCL    &kp PLUS    &kp UNDER   &kp HASH                &kp PG_UP   &none       &none       &none       &none
-                &kp PIPE    &kp QMARK   &kp MINUS   &kp PERCENT &none                   &kp PG_DN   &none       &none       &none       &none
+                &kp GRAVE   &kp CARET   &kp AT      &kp DOLLAR  &kp TILDE               &none       &kp LBKT   &none       &kp SEMI    &none
+                &kp SQT    &kp MINUS    &kp PLUS    &kp EXCL   &kp HASH                &kp PG_UP    &kp QMARK  &kp LPAR    &kp RPAR    &none
+                &kp PIPE    &kp QMARK   &kp MINUS   &kp PERCENT &none                   &kp PG_DN   &none      &none       &none       &none
                                                     &none       &none                   &none       &none
             >;
         };
         
+		
+		
         nav_layer {
             label = "Navigation";
 // -------------------------------     -------------------------------
@@ -220,14 +227,14 @@
             label = "Numbers and F-Keys";
 // -------------------------------     -------------------------------
 // |     |  F9 | F10 | F11 | F12 |  -  |  +  | num7| num8| num9|  /  | 
-// |     |  F5 |  F6 |  F7 |  F8 |     |  0  | num4| num5| num6|  .  | 
-// |     |  F1 |  F2 |  F3 |  F4 |  -  |  -  | num1| num2| num3|  *  | 
+// |     |  F5 |  F6 |  F7 |  F8 |     |  -  | num4| num5| num6|  .  | 
+// |     |  F1 |  F2 |  F3 |  F4 |  -  |num0 | num1| num2| num3|  *  | 
 // ------|           |           |     |     =     |   ENTER   |------
 //       -------------------------     -------------------------
             bindings = <
                 &none       &kp F9      &kp F10     &kp F11     &kp F12                 &kp KP_PLUS &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp KP_SLASH 
-                &none       &kp F5      &kp F6      &kp F7      &kp F8                  &kp KP_N0   &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp KP_DOT
-                &none       &kp F1      &kp F2      &kp F3      &kp F4                  &kp KP_MINUS &kp KP_N1  &kp KP_N2   &kp KP_N3   &kp KP_MULTIPLY
+                &none       &kp F5      &kp F6      &kp F7      &kp F8                  &kp KP_MINUSq &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp KP_DOT
+                &none       &kp F1      &kp F2      &kp F3      &kp F4                  &kp KP_N0 &kp KP_N1  &kp KP_N2   &kp KP_N3   &kp KP_MULTIPLY
                                                     &none       &none                   &kp KP_EQUAL &kp KP_ENTER
             >;
         };
