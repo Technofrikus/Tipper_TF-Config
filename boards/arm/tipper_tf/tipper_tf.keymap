@@ -94,7 +94,7 @@
             };
 	     combo_backspace {
 	            timeout-ms = <50>;
-	            key-positions = <17 18>;
+	            key-positions = <16 17>;
 	            bindings = <&kp BACKSPACE>;
 	            };
         combo_esc {
@@ -156,13 +156,13 @@
             label = "Base";
 // -------------------------------     -------------------------------
 // |  Q  |  W  |  E  |  R  |  T  |  -  |  Y  |  U  |  I  |  O  |  P  | 
-// |A sft|S ctl|D alt|F cmd|  G  |     |  H  |J cmd|K alt|L ctl|. sft| 
+// |A sft|S ctl|D alt|F cmd|  G  |     |H cmdH|J cmd|K alt|L ctl|. sft| 
 // |Z sft|  X  |  C  |  V  |  B  |  -  |  N  |  M  |  ,  |  .  |; sft| 
 // ------|    Nav    |  Bksp Symb|     | NUM Space | LGUI Ent  |------
 //       -------------------------     -------------------------
             bindings = <
                 &kp Q       &kp W       &kp E       &kp R       &kp T                   &kp Y       &kp U       &kp I       &kp O       &kp P
-                &hm LSHFT A &hm LCTRL S  &hm LALT D  &hm LGUI F &kp G                   &kp H       &hm RGUI J &hm RALT K  &hm RCTRL L  &lt NAV_L DOT
+                &hm LSHFT A &hm LCTRL S  &hm LALT D  &hm LGUI F &kp G                   &th_bal RG(&kp H) H       &hm RGUI J &hm RALT K  &hm RCTRL L  &lt NAV_L DOT
                 &hm LSHFT Z       &kp X       &kp C       &kp V       &kp B             &kp N       &kp M       &kp COMMA   &kp DOT     &hm RSHIFT SEMI
                                           &mo NAV_L      &lt SYM_L BSPC                        &lt NUM_L SPACE   &lt LGUI RET 
             >;
@@ -194,7 +194,7 @@
 //       -------------------------     -------------------------
             bindings = <
                 &kp GRAVE   &kp CARET   &kp AT      &kp DOLLAR  &kp TILDE               &none       &kp LBKT   &none       &kp SEMI    &none
-                &kp SQT    &kp MINUS    &kp PLUS    &kp EXCL   &kp HASH                &kp PG_UP    &kp QMARK  &kp LPAR    &kp RPAR    &none
+                &kp SQT    &kp MINUS    &kp PLUS    &kp EXCL   &kp HASH                &kp PG_UP    &kp UNDER  &kp ASTRK    &kp LPAR    &none
                 &kp PIPE    &kp QMARK   &kp MINUS   &kp PERCENT &none                   &kp PG_DN   &none      &none       &none       &none
                                                     &none       &none                   &none       &none
             >;
