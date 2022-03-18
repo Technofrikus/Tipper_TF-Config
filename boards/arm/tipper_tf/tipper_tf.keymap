@@ -162,7 +162,7 @@
 //       -------------------------     -------------------------
             bindings = <
                 &kp Q       &kp W       &kp E       &kp R       &kp T                   &kp Y       &kp U       &kp I       &kp O       &kp P
-                &hm LSHFT A &hm LCTRL S  &hm LALT D  &hm LGUI F &kp G                   &th_bal RG(H) H       &hm RGUI J &hm RALT K  &hm RCTRL L  &lt NAV_L DOT
+                &hm LSHFT A &hm LCTRL S  &hm LALT D  &hm LGUI F &kp G                   &mt RG(H) H       &hm RGUI J &hm RALT K  &hm RCTRL L  &lt NAV_L DOT
                 &hm LSHFT Z       &kp X       &kp C       &kp V       &kp B             &kp N       &kp M       &kp COMMA   &kp DOT     &hm RSHIFT SEMI
                                           &mo NAV_L      &lt SYM_L BSPC                        &lt NUM_L SPACE   &lt LGUI RET 
             >;
